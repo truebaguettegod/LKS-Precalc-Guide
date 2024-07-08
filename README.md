@@ -1,1 +1,1 @@
-LaTeX source for the M420 Honors Precalculus Guide Timothy D. '27.
+LaTeX source for the M420 Honors Precalculus Guide Timothy D. '27. Uses a modified version of [evan.sty](https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty) with additional macros.
