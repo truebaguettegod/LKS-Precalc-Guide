@@ -8,3 +8,4 @@
 *.out
 *.asy
 *.pdf
+.DS_Store
