@@ -1,16 +1,86 @@
 \chapter{Sequences and Series}
-What is a sequence? What is a series? Well a sequence is 
+What is a sequence? What is a series? To put it simply, a sequence is an ordered set of numbers. A series is the sum of an ordered set of numbers. These can be finite, or infinite. As a rule of thumb, if a sequence ends in dots, it is infinite. Sequences can be a random set of numbers, but for this chapter, we will be working with real numbers.
 \begin{example}[Sequence of Positive Integers]
     The sequence of the first $10$ positive integers is
     \[a_n=\{1,2,\dots,9,10\}.\]
-    Here, $a_1$ denotes the first element of the sequence; in this example, $a_1=1$.
+    Here, $a_1$ denotes the first element of the sequence; in this example, $a_1=1$. We will use this defintion for the rest of this chapter.
 \end{example}
+I know all you coders may be writhing in pain, but we will stick to that definition of $a_n$ for now. Now that we know what a sequence is, we need to define a partial sum.
+\begin{definition}[Partial Sums]
+    For a sequence $a_n$, the $n$th partial sum is
+    \[a_1+a_2+\dots+a_n.\]
+\end{definition}
+Sequences don't necessarily have any pattern, but later on in the section, we will explore special types of sequences, and special wayss to calculate their partial sums.
 \section{Explicit vs. Recursive Definitions}
-- cover explicit Definitions
-- cover recursive def 
-- problem
+A definition for a sequence is a pattern for generating the $n$th term of the sequence. An explicit definition can directly calculate the $n$th term of a sequence. It contains any degree of $n$ in the definition, and only $n$. On the other hand, a recursive definition relies on past terms to calculate the $n$th term. Let's take a look at the sequence of all positive integers.
+\begin{example}[Sequence of Positive Integers]
+    The sequence of the first $n$ positive integers is
+    \[a_n=\{1,2,\dots,n\}.\]
+    The explicit definition of this sequence is
+    \[a_n=n.\]
+    The recursive definiton of this sequence is
+    \[a_n=a_{n-1}+1\]
+    \[a_1=1.\]
+\end{example}
+The most important thing to remember for recursive definitions is \textbf{ALWAYS DEFINE THE FIRST $k$ TERMS OF A RECURSIVE SEQUENCE}, where $k$ is the largest value of $a_{n-k}$ in the recursive definition. Otherwise, it's like trying to knock dominoes down: even if the dominoes are set up to known the subsequent one down, if you don't knock down the first one, the others will not fall down.
+\begin{problem}
+    Find the explicit and recursive definitions for the sequence 
+    \[\{1, 2, 4, 8, 16, 32, 64,\dots\}\]
+\end{problem}
+\begin{problem}
+    Find the recursive definition for the sequence
+    \[\{-2, 3, 1, 4, 5, 9, 14,\dots\}\]
+    As an optional challenge, try finding the explicit definition for this sequence.
+\end{problem}
 \section{Arithmetic Sequences}
-- explain arithmetic series
+The first special type of sequence is an arithmetic sequence, 
+where every term is a constant amount away from the previous term. This brings us to the general definition of an arithmetic sequence.
+\begin{definition}[The General Arithmetic Sequence]
+    The general arithmetic sequence $A_n$ for two arbitrary constants $a, d$ is 
+    \[A_n=\{a, a+d, a+2d, \dots, a+d(n-1)\}.\]
+    We denote $d$ as the common difference.\\\\
+    The explicit definition of that sequence is
+    \[A_n=a+d(n-1).\]
+    The recursive definition of that sequence is
+    \[A_n=A_{n-1}+d\]
+    \[A_n=a.\]
+\end{definition}
+The logical reasoning behind the explicit definition is that the $nth$ term of a sequence has $n-1$ differences before it, starting with $a$. The explanation for the recursive definition is also pretty intuitive; since the common difference is always constant, any given term in the sequence is $d$ more than the last \\\\
+The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant.
+\begin{example}[A Simple Arithmetic Sequence]
+    A simple arithemtic sequence is 
+    \[A_n=\{1, 3, 5, 7, 9, 11,\dots\}.\]
+    The explicit defintion of that sequence is 
+    \[A_n=1+2(n-1)=2n-1\]
+    The recursive defintion of this sequence is
+    \[A_n=A_{n-1}+2\]
+    \[A_1=1.\]
+\end{example}
+Sometimes, you'll receive a tricky problem like this:
+\begin{problem}
+    Find the explicit definition for $A_n$, where
+    \[A_3=5\]
+    \[A_7=17.\]
+\end{problem}
+\begin{solution}
+    We can use the general explicit defintion to solve this problem. Plugging in $A_3$ and $A_7$ gives us
+    \[A_3=a+d(3-1)\]
+    \[5=a+3d-3\]
+    \[8=a+3d.\]
+    \[A_7=a+d(7-1)\]
+    \[17=a+7d-7\]
+    \[24=a+7d.\]
+    Subtracting our second equation from the first gives us
+    \[(a+7d)-(a+3d)=24-8\]
+    \[4d=16\]
+    \[d=4.\]
+    Plugging $d$ into the first equation gives us 
+    \[8=a+3\cdot4\]
+    \[a=-4.\]
+    Therefore, the explicit defintion of $A_n$ is $-4+4(n-1)$.
+\end{solution}
+In general,
+\[d=\frac{A_k-A_l}{k-l-1}\]
 - formulas+derivations
 - problem
 \section{Geometric Sequences}
