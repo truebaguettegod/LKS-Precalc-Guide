@@ -32,9 +32,11 @@ The most important thing to remember for recursive definitions is \textbf{ALWAYS
     \[\{-2, 3, 1, 4, 5, 9, 14,\dots\}\]
     As an optional challenge, try finding the explicit definition for this sequence.
 \end{problem}
+
+
+
 \section{Arithmetic Sequences}
-The first special type of sequence is an arithmetic sequence, 
-where every term is a constant amount away from the previous term. This brings us to the general definition of an arithmetic sequence.
+The first special type of sequence is an arithmetic sequence. This is where any two consecutive terms have the same common difference. This brings us to the general definition of an arithmetic sequence.
 \begin{definition}[The General Arithmetic Sequence]
     The general arithmetic sequence $A_n$ for two arbitrary constants $a, d$ is 
     \[A_n=\{a, a+d, a+2d, \dots, a+d(n-1)\}.\]
@@ -45,59 +47,21 @@ where every term is a constant amount away from the previous term. This brings u
     \[A_n=A_{n-1}+d\]
     \[A_n=a.\]
 \end{definition}
-The logical reasoning behind the explicit definition is that the $nth$ term of a sequence has $n-1$ differences before it, starting with $a$. The explanation for the recursive definition is also pretty intuitive; since the common difference is always constant, any given term in the sequence is $d$ more than the last \\\\
-The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant.
-\begin{example}[A Simple Arithmetic Sequence]
-    A simple arithemtic sequence is 
-    \[A_n=\{1, 3, 5, 7, 9, 11,\dots\}.\]
-    The explicit defintion of that sequence is 
-    \[A_n=1+2(n-1)=2n-1\]
-    The recursive defintion of this sequence is
-    \[A_n=A_{n-1}+2\]
-    \[A_1=1.\]
-\end{example}
-Sometimes, you'll receive a tricky problem like this:
-\begin{problem}
-    Find the explicit definition for $A_n$, where
-    \[A_3=5\]
-    \[A_7=17.\]
-\end{problem}
-\begin{solution}
-    We can use the general explicit defintion to solve this problem. Plugging in $A_3$ and $A_7$ gives us
-    \[A_3=a+d(3-1)\]
-    \[5=a+3d-3\]
-    \[8=a+3d.\]
-    \[A_7=a+d(7-1)\]
-    \[17=a+7d-7\]
-    \[24=a+7d.\]
-    Subtracting our second equation from the first gives us
-    \[(a+7d)-(a+3d)=24-8\]
-    \[4d=16\]
-    \[d=4.\]
-    Plugging $d$ into the first equation gives us 
-    \[8=a+3\cdot4\]
-    \[a=-4.\]
-    Therefore, the explicit defintion of $A_n$ is $-4+4(n-1)$.
-\end{solution}
-In general,
+The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant. \\\\
+Extending that, 
 \[d=\frac{A_k-A_n}{k-n}\]
-(Note that this time, $A_n$ is the $n$th term).\\\\
-Again, if we think about it, we're finding how many $d$s occur between $A_k$ and $A_n$, and then dividing it by that by that many occurences. 
+since there are $k-n$ differences between $A_k$ and $A_n$.
 \subsection{The Arithmetic Series Formula}
-Now let's derive the arithmetic series formula. Here's a cool story that my parents have been teaching me since I was a child. It has been translated for your purposes.
-\begin{remark}[Storytime]
-    There once was a famous mathematician called Gauss. One day, his teacher gave his entire class a tricky problem: find the sum of the first $100$ integers. The whole class got down and started adding, frustrated. However, Gauss opted to avoid the grueling summation and decided to match each integer with its partner on the other side of the set. That is, he paired $1$ and $100$, $2$ and $99$, etc. Quickly, he found $50$ pairs of $101$, leading him to find $5050$ while the rest of the class was still stupidly chipping away at the problem.
-\end{remark}
-We can apply this same thinking for arithmetic series. mathematically, it can be expressed as the following:
-\[S=1+3+5+...+115+117+119\]
-\[2S=(1+119)+(3+117)+(5+115)+\dots+(115+5)+(117+3)+(119+1)\]
-\[S=\frac{120\cdot 59}{2}\]
-\[S=3540.\]
-This leads us to our hypothesis:
+We propose the following:
 \begin{lemma}[Sum of Arithmetic Series]
     The sum of $\{a, a+d, a+2d, \dots, a+d(n-1)\}$ is 
     \[\frac{n(2a+d(n-1))}{2}\]
 \end{lemma}
+Now let's derive the arithmetic series formula. Here's a cool story that my parents have been teaching me since I was a child. It has been translated for your purposes.
+\begin{remark}[Storytime]
+    There once was a famous mathematician called Gauss. One day, his teacher gave his entire class a tricky problem: find the sum of the first $100$ integers. The whole class got down and started adding, frustrated. However, Gauss opted to avoid the grueling summation and decided to match each integer with its partner on the other side of the set. That is, he paired $1$ and $100$, $2$ and $99$, etc. Quickly, he found $50$ pairs of $101$, leading him to find $5050$ while the rest of the class was still stupidly chipping away at the problem.
+\end{remark}
+We can apply that thinking and write our proof.
 \begin{proof}
     \[S=a+(a+d)+(a+2d)+\dots+(a+d(n-2))+(a+d(n-1))\]
     \[2S=(2a+d(n-1))+(2a+d(n-1))+(2a+d(n-1))+\dots+(2a+d(n-1))+(2a+d(n-1))\]
@@ -106,20 +70,107 @@ This leads us to our hypothesis:
 \end{proof}
 Another way to think of this formula is 
 \[\frac{n(First+Last)}{2}\]
-
-- problem
+This reason why should be pretty trivial. Lastly, we will finish this section off with a saying in Chinese that always helped me remember the formula
+\begin{quote}
+    shou xiang jia mo xiang cheng yu xiang shu chu yu er
+\end{quote}
+It simply means "First plus Last times occurences divided by two".
+\begin{problem}
+    Find $19+25+31+37+\dots+79+85+91+97$.
+\end{problem}
+\begin{problem}
+    For an arithmetic sequence $S_n=\{a, a+d, a+2d,\dots,a+(n-2)d,a+(n-1)d\}$, find a formula for $S_k+S_{k+1}+S_{k+2}+\dots+S_{l-1}+S_l$ for arbitrary values $k$, $l$ such that $k\leq l$.
+\end{problem}
 \section{Geometric Sequences}
-- explain geometric series
-- formulas+derivations
-- problem
+The second type of special sequence is a geometric sequence. This is where any two consecutive terms have the same common ratio. This leads us to our general geometric series.
+\begin{definition}
+    The general geometric sequence $G_n$ for two arbitrary constants $a, r$ is 
+    \[G_n=\{a, ar, ar^2, \dots, ar^{n-1}\}.\]
+    We denote $r$ as the common ratio.\\\\
+    The explicit definition of that sequence is
+    \[G_n=ar^n.\]
+    The recursive definition of that sequence is
+    \[G_n=G_{n-1}\cdot r\]
+    \[G_n=a.\]
+\end{definition}
+The common ratio can be calculated by dividing two consecutive terms.
+\\\\
+Similar to an arithemtic series, 
+\[\frac{\frac{G_k}{G_n}}{k-n}\]
+Similarily, the thinking goes that there are $k-n$ ratios between $G_k$ and $G_n$.
+\subsection{The Geometric Series Formula}
+We propose the following:
+\begin{lemma}
+    The sum of $\{a, ar, ar^2,\dots,ar^{n-1}\}$ is 
+    \[\frac{a(r^n-1)}{r-1}\]
+\end{lemma}
+Sadly, there is no story to derive this formula. But there is a really interesting connection between this and polynomials. It just so happens that 
+\[\frac{x^n-1}{n-1}=1+x+x^2+x^3+\dots+x^{n-1}\]
+due to polynomial division (you can try this yourself with synthetic division). This is one way to derive the geometric series formula. Or you can do it the "official" way.
+\begin{proof}
+    \[S=a+ar+ar^2+\dots+ar^{n-1}\]
+    \[S\cdot r=ar+ar^2+ar^3+\dots+ar^n\]
+    \[Sr-S=ar^n-a\]
+    \[S(r-1)=a(r^n-1)\]
+    \[S=\frac{a(r^n-1)}{r-1}\]
+\end{proof}
+\begin{problem}
+    Compute
+    \[\frac{5}{12}+\frac{5}{3}+\frac{20}{3}+\dots+\frac{800}{3}\]
+\end{problem}
+\section{Infinite Geometric Series}
+One funny (and really cool) thing we can do with geometric series that we can't do with arithmetic series is infinite geometric series. First, we need to define convergence and divergence. Convergence is when the sum of a series starts to approach, or \textbf{converge} onto a point as more terms are added. Divergence is when the sum of a series doesn't approach anything, and in fact moves farther away from $0$ on the number line.\\\\
+Geometric series, however, have the potential for values to approach $0$ as $n$ grows larger if the common ratio is less than $1$. Therefore, the series has the ability to converge onto a value.\\\\
+A famous problem is the dichotomy problem, which details the story of someone trying to get from point $A$ to point $B$. Each turn, they move half the remaining distance to point $B$. Will they ever reach point $B$? It turns out, sorta. 
+\subsection{Infinite Geometric Series Formula}
+We really want to find a value for our dichotomy problem, but to do so, we have to eliminate the infinite terms. Luckily, since it's infinite, we can multiply our series by $2$. 
+\[S=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\dots\]
+\[2S=1+\frac{1}{2}+\frac{1}{4}+\dots\]
+\[2S-S=S=1.\]
+Now we can apply this thinking and obtain our infinite geometric series formula.
+\begin{lemma}
+    The sum of $\{a+ar+ar^2+ar^3+\dots\}$ is
+    \[\frac{a}{1-r}\]
+    if and only if $|r|<1$.
+\end{lemma}
+\begin{proof}
+    \[S=a+ar+ar^2+ar^3+\dots\]
+    \[S\cdot r=ar+ar^2+ar^3+ar^4+\dots\]
+    \[S-S\cdot r=a\]
+    \[S=\frac{a}{1-r}\]
+    Obviously, if $r\geq 1$, the terms can never converge, so the restriction that $|r|<1$ applies.
+\end{proof}
+If we decide to violate this restriction, we get really interesting values. This is the study of infinite partial sums. Though it technically isn't defined, we can apply this to some series with common ratio $\geq 1$ and get some pretty strange answers. Though it isn't an infinite geometric series, the Ramanujan Summation tells us
+\[1+2+3+4+\dots=-\frac{1}{12}.\]
+This is obviously false. Or is it? Srinivas Ramanjuan developed a very interesting derivation, which is explained in the subappendices.
+\begin{problem}
+    Compute
+    \[\frac{1}{3}+\frac{3}{6}+\frac{9}{12}+\frac{27}{24}+\dots\]
+\end{problem}
+\begin{problem}[\textbf{Challenge}]
+    Compute
+    \[\frac{1}{2}+\frac{3}{4}+\frac{5}{8}+\frac{7}{16}+\dots\]
+\end{problem}
 \section{Sigma Notation}
-- explain the importance of Sigma
-- explain how to use sigma
-- problem
-\section{Infinite Series}
-- explain the importance of Sigma
-- explain divergence+convergence
-- problem
+As a mathematician, I love efficiency. One thing that cosntanlty annoys me is writing out a summation, like $a+ar+ar^2+ar^3+ar^4+\dots$. Don't you wish there could be a quicker way of writing this? Well, luckily there is. Welcome to the wonderful world of sigma!\\\\
+Sigma notation is an efficient way to write out summations or products (which is technically called product notation, but we're putting them in the same section).
+\[\sum_{k=a}^{n}f(k)\]
+This is sigma. If you know coding, think of it as a for loop. $k$ is the index of this summation, $a$ is the start, and $n$ is the stop. That is, it will sum $f(k)$ for every value of $k$ from $a$ to $n$, inclusive. $k$ will only increase by $1$ each time. 
+\begin{example}[Sum of All Natural Numbers]
+    \[\sum_{k=1}^{\infty}k=1+2+3+4+\dots\]
+    The start is $1$, so we start with $1$. Then we add $2$. Then $3$. This continues for eternity, since you can have the stop be infinity. I suppose in that case, the summation just doesn't stop. 
+\end{example}
+Product notation is very similar. Just replace $\sum$ with $\prod$, and instead of summing terms, multiply terms.
+\begin{example}[n!]
+    \[\prod_{k=1}^{n}k=1\cdot 2\cdot 3\cdot \dots \cdot n=n!\]
+\end{example}
+You are allowed to nest summations, such as 
+\[\sum_{i=1}^{n}\sum_{j=1}^{i}j=(1+2+3+\dots)+(2+3+4+\dots)+\dots\]
+However, something you are not allowed to do is have the index move backwards. This is not standard:
+\[\sum_{k=10}^{5}k.\]
+\begin{problem}
+    Write $(1\cdot2)+(2\cdot 3)+(3\cdot 4)+\dots$ using sigma and product notation.
+\end{problem}
 \section{Interest}
 - explain APR/Yield
 - explain how sequences+series tie into it
@@ -129,4 +180,5 @@ Another way to think of this formula is
 \section{Bonus: Sums of $n^k$ powers}
     - formulas, how to derive next
 \section{Explicit Formulas for Linear Recurrences}
+\section{The Ramanujan Summation}
 \end{subappendices}
