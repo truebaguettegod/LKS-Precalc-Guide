@@ -1,16 +1,53 @@
 \chapter{Sequences and Series}
-What is a sequence? What is a series? To put it simply, a sequence is an ordered set of numbers. A series is the sum of an ordered set of numbers. These can be finite, or infinite. As a rule of thumb, if a sequence ends in dots, it is infinite. Sequences can be a random set of numbers, but for this chapter, we will be working with real numbers.
-\begin{example}[Sequence of Positive Integers]
-    The sequence of the first $10$ positive integers is
-    \[a_n=\{1,2,\dots,9,10\}.\]
-    Here, $a_1$ denotes the first element of the sequence; in this example, $a_1=1$. We will use this defintion for the rest of this chapter.
-\end{example}
-I know all you coders may be writhing in pain, but we will stick to that definition of $a_n$ for now. Now that we know what a sequence is, we need to define a partial sum.
-\begin{definition}[Partial Sums]
-    For a sequence $a_n$, the $n$th partial sum is
-    \[a_1+a_2+\dots+a_n.\]
+\section{Definitions}
+\begin{definition}
+    A \emph{sequence} is a list of things, usually numbers. Each of the things in a sequence are called \emph{terms}.
 \end{definition}
-Sequences don't necessarily have any pattern, but later on in the section, we will explore special types of sequences, and special wayss to calculate their partial sums.
+\begin{example}
+    The sequence of the first $10$ positive even integers is
+    \[\{2,4,\dots,18,20\}.\]
+\end{example}
+When we want to talk about sequences, we want to be able to label each of the terms in the sequence. Even though we can just refer to the first thing in a sequence as ``the first thing in a sequence'', it's very unwieldy to write
+\[\text{the first thing in the sequence above}=2\]
+every time we want to talk about the first thing in a sequence.
+\\\\
+Instead, mathematicians use subscripts to refer to these elements. For example, we have that
+\[a_1=2.\]
+Here, the letter $a$ is just the name of our sequence, and the number $1$ means that it is the first thing in our sequence. We can treat $a_1$ as any other variable.
+\\\\
+When we introduce a sequence, we can say that our sequence is $a_n$, $\{a\}$, $\{a_n\}$, or even just $a$. For example, we can alternatively say that
+\begin{example}
+    Let $a_n$ be the sequence of the first $10$ positive even integers, or
+    \[a_n=\{2,4,\dots,18,20\}.\]
+\end{example}
+There also exist \emph{infinite} sequences. What this means is that the sequence has no end, compared to a \emph{finite} sequence which does have an end. Our example above is a finite sequence, since we can clearly see that it ends. The following sequence, on the other hand, does not end:
+\begin{example}
+    An example of an infinite sequence is the sequence of all positive even integers, or
+    \[a_n=\{2,4,6,\dots\}.\]
+    Notice that here, we cannot identify a concrete "last term". Even though the last term listed out is $6$, the ellipsis signify that there is more; in fact, infinitely more. Unlike with the earlier example where we used ellipsis because we're too lazy to list out all of the terms, here we do so because it is impossible to actually list out all of the terms.
+\end{example}
+A key thing to note is that sequences don't necessarily have any pattern. For example,
+\[a_n=\{1,4,3,4,12,10,7,-3,\pi\}\] 
+is a sequence. However, since these sequences are very random, we can't really identify special properties about them, so we won't discuss them very much.
+\\\\
+On the other hand, a series is the sum of the things in a sequence. We may rigorously define it as follows:
+\begin{definition}
+    The \emph{series} $S$ of a sequence $a_n$ is defined as
+    \[S=a_1+a_2+\dots\]
+\end{definition}
+\begin{example}
+    Earlier, we had the example of the sequence $a_n=\{2,4,\dots,18,20\}$. Then, the series of this sequence is
+    \[S=2+4+6+\dots+18+20,\]
+    which calculates to be $110$.
+\end{example}
+Sometimes, we would like to only add up some of the elements of a sequence. We can define it as such:
+\begin{definition}[Partial Sums]
+    For a sequence $a_n$, the \emph{$n$th partial sum} is
+    \[a_1+a_2+\dots+a_n.\]
+    In other words, this is the sum of the first $n$ terms.
+\end{definition}
+Later on in the section, we will explore special types of sequences which have special ways to calculate their partial sums.
+
 \section{Explicit vs. Recursive Definitions}
 A definition for a sequence is a pattern for generating the $n$th term of the sequence. An explicit definition can directly calculate the $n$th term of a sequence. It contains any degree of $n$ in the definition, and only $n$. On the other hand, a recursive definition relies on past terms to calculate the $n$th term. Let's take a look at the sequence of all positive integers.
 \begin{example}[Sequence of Positive Integers]
