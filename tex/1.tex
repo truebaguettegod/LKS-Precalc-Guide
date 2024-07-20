@@ -46,31 +46,44 @@ Sometimes, we would like to only add up some of the elements of a sequence. We c
     \[a_1+a_2+\dots+a_n.\]
     In other words, this is the sum of the first $n$ terms.
 \end{definition}
+\begin{exercise}
+    Find the $6$th partial sum of the Fibonacci sequence
+    \[a_n=\{0,1,1,2,3,5,8,\dots\}.\]
+\end{exercise}
 Later on in the section, we will explore special types of sequences which have special ways to calculate their partial sums.
 
-\section{Explicit vs. Recursive Definitions}
-A definition for a sequence is a pattern for generating the $n$th term of the sequence. An explicit definition can directly calculate the $n$th term of a sequence. It contains any degree of $n$ in the definition, and only $n$. On the other hand, a recursive definition relies on past terms to calculate the $n$th term. Let's take a look at the sequence of all positive integers.
-\begin{example}[Sequence of Positive Integers]
-    The sequence of the first $n$ positive integers is
-    \[a_n=\{1,2,\dots,n\}.\]
-    The explicit definition of this sequence is
-    \[a_n=n.\]
-    The recursive definiton of this sequence is
-    \[a_n=a_{n-1}+1\]
-    \[a_1=1.\]
+\section{Explicit and Recursive Definitions}
+
+There are many ways to define the terms of a sequence. For example, we can \emph{explicitly} define the terms of a sequence. Here, we explicitly tell the reader what the $n$th term exactly is.
+\begin{example}
+    The sequence of positive even integers $a_n$ is defined as
+    \[a_n=2n.\]
+    This is equivalent to saying "the $n$th term of our sequence can be written as $2n$".
 \end{example}
-The most important thing to remember for recursive definitions is \textbf{ALWAYS DEFINE THE FIRST $k$ TERMS OF A RECURSIVE SEQUENCE}, where $k$ is the largest value of $a_{n-k}$ in the recursive definition. Otherwise, it's like trying to knock dominoes down: even if the dominoes are set up to known the subsequent one down, if you don't knock down the first one, the others will not fall down.
-\begin{problem}
+Another way to define the terms of a sequence is \emph{recursively}. This is done by telling the reader how to compute each term of the sequence based on the previous terms of the sequence.
+\begin{example}
+    The sequence of positive even integers $a_n$ is defined with $a_1=2$, and
+    \[a_n=a_{n-1}+2.\]
+    This is equivalent to saying "you can get the next term of the sequence by adding $2$ to the previous one".
+\end{example}
+Initially, recursive definitions may seem incredibly useless, however examples like the Fibonacci sequence show that they make for much nicer presentations of sequences.
+\begin{example}
+    The famous Fibonacci sequence $F_n$ is defined with $F_0=0$, $F_1=1$, and for all other terms, that
+    \[F_n=F_{n-1}+F_{n-2}.\]
+    This is equivalent to saying "the $n$th term of the Fibonacci sequence is the sum of the terms before it". 
+\end{example}
+\begin{remark}
+    Although there exist explicit definitions of the Fibonacci sequence, they are quite ugly and hard to work with, and it is best not to venture off in that direction until later. 
+\end{remark}
+The most important thing to remember for recursive definitions is \textbf{ALWAYS DEFINE THE FIRST TERMS OF A RECURSIVE SEQUENCE}. It is impossible for the reader to calculate the rest of the terms of your sequence if you don't explicitly define the first terms. Otherwise, it's like trying to knock dominoes down: even if the dominoes are set up to knock each subsequent one down, if you don't knock down the first one, the others will not fall.
+\begin{exercise}
     Find the explicit and recursive definitions for the sequence 
     \[\{1, 2, 4, 8, 16, 32, 64,\dots\}\]
-\end{problem}
-\begin{problem}
+\end{exercise}
+\begin{exercise}
     Find the recursive definition for the sequence
     \[\{-2, 3, 1, 4, 5, 9, 14,\dots\}\]
-    As an optional challenge, try finding the explicit definition for this sequence.
-\end{problem}
-
-
+\end{exercise}
 
 \section{Arithmetic Sequences}
 The first special type of sequence is an arithmetic sequence. This is where any two consecutive terms have the same common difference. This brings us to the general definition of an arithmetic sequence.
