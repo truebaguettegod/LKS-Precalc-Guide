@@ -605,14 +605,14 @@
     \declaretheorem[style=basehead,name=Conjecture,numbered=no]{conjecture*}
     \declaretheorem[style=basehead,name=Definition,sibling=theorem]{definition}
     \declaretheorem[style=basehead,name=Definition,numbered=no]{definition*}
-    \declaretheorem[style=basehead,name=Exercise,sibling=theorem]{exercise}
-    \declaretheorem[style=basehead,name=Exercise,numbered=no]{exercise*}
+    \declaretheorem[style=thmblackbox,name=Exercise,sibling=theorem]{exercise}
+    \declaretheorem[style=thmblackbox,name=Exercise,numbered=no]{exercise*}
     \declaretheorem[style=basehead,name=Fact,sibling=theorem]{fact}
     \declaretheorem[style=basehead,name=Fact,numbered=no]{fact*}
     \declaretheorem[style=basehead,name=Problem,sibling=theorem]{problem}
     \declaretheorem[style=basehead,name=Problem,numbered=no]{problem*}
-    \declaretheorem[style=basehead,name=Question,sibling=theorem]{ques}
-    \declaretheorem[style=basehead,name=Question,numbered=no]{ques*}
+    \declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{ques}
+    \declaretheorem[style=thmblackbox,name=Question,numbered=no]{ques*}
 
     \ifevanpkg
       \Crefname{answer}{Answer}{Answers}
@@ -846,7 +846,6 @@
   \fi
 
   \setlength{\parindent}{0pt}
-  \setlength{\parskip}{10pt}
 
 
 %%fakesection END MAIN SETUP
