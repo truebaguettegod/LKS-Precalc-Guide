@@ -1,6 +1,9 @@
-\documentclass[11pt,twoside=semi,openright,numbers=noenddot]{scrbook}
+\documentclass[12pt]{scrreprt}
 \usepackage[sexy]{evan}
+\usepackage{etoolbox}
+\usepackage{scrhack}
 \usepackage{appendix}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
 \setcounter{chapter}{-1}
 % \includeonly{tex/1.tex}
 
