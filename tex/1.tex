@@ -10,11 +10,11 @@
 When we want to talk about sequences, we want to be able to label each of the terms in the sequence. Even though we can just refer to the first thing in a sequence as ``the first thing in a sequence'', it's very unwieldy to write
 \[\text{the first thing in the sequence above}=2\]
 every time we want to talk about the first thing in a sequence.
-\\\\
+
 Instead, mathematicians use subscripts to refer to these elements. For example, we have that
 \[a_1=2.\]
 Here, the letter $a$ is just the name of our sequence, and the number $1$ means that it is the first thing in our sequence. We can treat $a_1$ as any other variable.
-\\\\
+
 When we introduce a sequence, we can say that our sequence is $a_n$, $\{a\}$, $\{a_n\}$, or even just $a$. For example, we can alternatively say that
 \begin{example}
     Let $a_n$ be the sequence of the first $10$ positive even integers, or
@@ -29,7 +29,7 @@ There also exist \emph{infinite} sequences. What this means is that the sequence
 A key thing to note is that sequences don't necessarily have any pattern. For example,
 \[a_n=\{1,4,3,4,12,10,7,-3,\pi\}\] 
 is a sequence. However, since these sequences are very random, we can't really identify special properties about them, so we won't discuss them very much.
-\\\\
+
 On the other hand, a series is the sum of the things in a sequence. We may rigorously define it as follows:
 \begin{definition}
     The \emph{series} $S$ of a sequence $a_n$ is defined as
@@ -90,14 +90,14 @@ The first special type of sequence is an arithmetic sequence. This is where any 
 \begin{definition}[The General Arithmetic Sequence]
     The general arithmetic sequence $A_n$ for two arbitrary constants $a, d$ is 
     \[A_n=\{a, a+d, a+2d, \dots, a+d(n-1)\}.\]
-    We denote $d$ as the common difference.\\\\
+    We denote $d$ as the common difference.
     The explicit definition of that sequence is
     \[A_n=a+d(n-1).\]
     The recursive definition of that sequence is
     \[A_n=A_{n-1}+d\]
     \[A_n=a.\]
 \end{definition}
-The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant. \\\\
+The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant. 
 Extending that, 
 \[d=\frac{A_k-A_n}{k-n}\]
 since there are $k-n$ differences between $A_k$ and $A_n$.
@@ -136,7 +136,7 @@ The second type of special sequence is a geometric sequence. This is where any t
 \begin{definition}
     The general geometric sequence $G_n$ for two arbitrary constants $a, r$ is 
     \[G_n=\{a, ar, ar^2, \dots, ar^{n-1}\}.\]
-    We denote $r$ as the common ratio.\\\\
+    We denote $r$ as the common ratio.
     The explicit definition of that sequence is
     \[G_n=ar^n.\]
     The recursive definition of that sequence is
@@ -144,7 +144,7 @@ The second type of special sequence is a geometric sequence. This is where any t
     \[G_n=a.\]
 \end{definition}
 The common ratio can be calculated by dividing two consecutive terms.
-\\\\
+
 Similar to an arithemtic series, 
 \[\frac{\frac{G_k}{G_n}}{k-n}\]
 Similarily, the thinking goes that there are $k-n$ ratios between $G_k$ and $G_n$.
@@ -169,8 +169,8 @@ due to polynomial division (you can try this yourself with synthetic division). 
     \[\frac{5}{12}+\frac{5}{3}+\frac{20}{3}+\dots+\frac{800}{3}\]
 \end{problem}
 \section{Infinite Geometric Series}
-One funny (and really cool) thing we can do with geometric series that we can't do with arithmetic series is infinite geometric series. First, we need to define convergence and divergence. Convergence is when the sum of a series starts to approach, or \textbf{converge} onto a point as more terms are added. Divergence is when the sum of a series doesn't approach anything, and in fact moves farther away from $0$ on the number line.\\\\
-Geometric series, however, have the potential for values to approach $0$ as $n$ grows larger if the common ratio is less than $1$. Therefore, the series has the ability to converge onto a value.\\\\
+One funny (and really cool) thing we can do with geometric series that we can't do with arithmetic series is infinite geometric series. First, we need to define convergence and divergence. Convergence is when the sum of a series starts to approach, or \textbf{converge} onto a point as more terms are added. Divergence is when the sum of a series doesn't approach anything, and in fact moves farther away from $0$ on the number line.
+Geometric series, however, have the potential for values to approach $0$ as $n$ grows larger if the common ratio is less than $1$. Therefore, the series has the ability to converge onto a value.
 A famous problem is the dichotomy problem, which details the story of someone trying to get from point $A$ to point $B$. Each turn, they move half the remaining distance to point $B$. Will they ever reach point $B$? It turns out, sorta. 
 \subsection{Infinite Geometric Series Formula}
 We really want to find a value for our dichotomy problem, but to do so, we have to eliminate the infinite terms. Luckily, since it's infinite, we can multiply our series by $2$. 
@@ -202,7 +202,7 @@ This is obviously false. Or is it? Srinivas Ramanjuan developed a very interesti
     \[\frac{1}{2}+\frac{3}{4}+\frac{5}{8}+\frac{7}{16}+\dots\]
 \end{problem}
 \section{Sigma Notation}
-As a mathematician, I love efficiency. One thing that cosntanlty annoys me is writing out a summation, like $a+ar+ar^2+ar^3+ar^4+\dots$. Don't you wish there could be a quicker way of writing this? Well, luckily there is. Welcome to the wonderful world of sigma!\\\\
+As a mathematician, I love efficiency. One thing that cosntanlty annoys me is writing out a summation, like $a+ar+ar^2+ar^3+ar^4+\dots$. Don't you wish there could be a quicker way of writing this? Well, luckily there is. Welcome to the wonderful world of sigma!
 Sigma notation is an efficient way to write out summations or products (which is technically called product notation, but we're putting them in the same section).
 \[\sum_{k=a}^{n}f(k)\]
 This is sigma. If you know coding, think of it as a for loop. $k$ is the index of this summation, $a$ is the start, and $n$ is the stop. That is, it will sum $f(k)$ for every value of $k$ from $a$ to $n$, inclusive. $k$ will only increase by $1$ each time. 
