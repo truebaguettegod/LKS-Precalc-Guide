@@ -77,31 +77,69 @@ Initially, recursive definitions may seem incredibly useless, however examples l
 \end{remark}
 The most important thing to remember for recursive definitions is \textbf{ALWAYS DEFINE THE FIRST TERMS OF A RECURSIVE SEQUENCE}. It is impossible for the reader to calculate the rest of the terms of your sequence if you don't explicitly define the first terms. Otherwise, it's like trying to knock dominoes down: even if the dominoes are set up to knock each subsequent one down, if you don't knock down the first one, the others will not fall.
 \begin{exercise}
-    Find the explicit and recursive definitions for the sequence 
+    Find explicit and recursive definitions for the sequence 
     \[\{1, 2, 4, 8, 16, 32, 64,\dots\}\]
 \end{exercise}
 \begin{exercise}
-    Find the recursive definition for the sequence
+    Find a recursive definition for the sequence
     \[\{-2, 3, 1, 4, 5, 9, 14,\dots\}\]
 \end{exercise}
 
 \section{Arithmetic Sequences}
-The first special type of sequence is an arithmetic sequence. This is where any two consecutive terms have the same common difference. This brings us to the general definition of an arithmetic sequence.
-\begin{definition}[The General Arithmetic Sequence]
-    The general arithmetic sequence $A_n$ for two arbitrary constants $a, d$ is 
-    \[A_n=\{a, a+d, a+2d, \dots, a+d(n-1)\}.\]
-    We denote $d$ as the common difference.
-    The explicit definition of that sequence is
-    \[A_n=a+d(n-1).\]
-    The recursive definition of that sequence is
-    \[A_n=A_{n-1}+d\]
-    \[A_n=a.\]
+
+One sequence you will commonly see is the \emph{arithmetic sequence}. We will give a couple of examples before we formally define it.
+
+\begin{example}\listhack
+    \begin{itemize}
+        \item The arithmetic sequence with first term $1$ and common difference $1$ is
+        \[\{1,2,3,4,5,\dots\}.\]
+        \item The arithmetic sequence with first term $2$ and common difference $2$ is
+        \[\{2,4,6,8,10,\dots\}.\]
+        \item The arithmetic sequence with first term $102$ and common difference $2$ is
+        \[\{102,104,106,108,110,\dots\}.\]
+        \item The arithmetic sequence with first term $-8$ and common difference $3$ is
+        \[\{-8,-5,-2,1,4,\dots\}.\]
+        \item The arithmetic sequence with first term $4$ and common difference $-3$ is
+        \[\{4,1,-2,-5,4-8,\dots\}.\]
+    \end{itemize}
+\end{example}
+
+As you can see, an arithmetic sequence is really just the idea of ``counting up by a number''. For example, the arithmetic sequence with first term $-8$ and common difference $3$ is just the same thing as counting up from $-8$ by $3$s. We will rigorously define this as such:
+
+\begin{definition}
+    An arithmetic sequence $a_n$ is a sequence defined by a starting term $a$ and common difference $d$, with the sequence being
+    \[a_n=\{a, a+d, a+2d, a+3d,\dots\}.\]
 \end{definition}
-The common difference can easily be calculated by subtracting any two adjacent terms of an arithmetic sequence, as it is always constant. 
+
+Notice that the $n$th term of this sequence is explicitly defined by
+\begin{align*}
+    a_1&=a\\
+    a_2&=a+d\\
+    a_3&=a+2d\\
+    &\vdots\\
+    a_n&=a+(n-1)d.
+\end{align*}
+The reason it's not
+\[a_n=a+nd\]
+is because our first term is $a_1$, which does not have any $d$ term. 
+
+\begin{exercise}
+    Biff is counting up by $5$s, starting from $2$. What is the $10$th number he says? What about the $100$th number? What about the $n$th number?
+\end{exercise}
+
+When given an arithmetic sequence, we may easily calculate its common difference by subtracting any two adjacent terms of an arithmetic sequence.
+
 Extending that, 
-\[d=\frac{A_k-A_n}{k-n}\]
-since there are $k-n$ differences between $A_k$ and $A_n$.
+\[d=\frac{A_m-A_n}{m-n}\]
+since there are $m-n$ differences between $A_m$ and $A_n$.
+
+\begin{exercise}
+    Eho wrote the following arithmetic sequence on the board, but accidentally smudged some of the numbers, which have become black squares. What were the numbers Eho originally wrote?
+    \[23,\blacksquare,\blacksquare,47,\blacksquare,\blacksquare\]
+\end{exercise}
+
 \subsection{The Arithmetic Series Formula}
+
 We propose the following:
 \begin{lemma}[Sum of Arithmetic Series]
     The sum of $\{a, a+d, a+2d, \dots, a+d(n-1)\}$ is 

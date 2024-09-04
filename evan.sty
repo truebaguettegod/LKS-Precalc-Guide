@@ -374,6 +374,11 @@
   %%fakesection Set up author and date
   \ifevanauthor
     \title{} % empty title to avoid crashes
+    \ifluatex
+      \author{Timothy D. '27 and Raymond Z. '27}
+    \else
+      \author{Timothy D. '27 and Raymond Z. '27}
+    \fi
     \date{\today}
   \fi
   %%fakesection Hyperref
@@ -769,7 +774,7 @@
         \renewcommand{\headrulewidth}{0.5pt}
         \renewcommand{\footrulewidth}{0.0pt}
         \pagestyle{fancy}
-        \lhead{Timothy D. '27 and Raymond Z. '27}
+        \lhead{Tim D. & Raymond Z.}
         \chead{}
         \rhead{\nouppercase{\leftmark}}
         \lfoot{}
