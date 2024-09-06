@@ -7,5 +7,4 @@
 *.fdb_latexmk
 *.out
 *.asy
-*.pdf
 .DS_Store
